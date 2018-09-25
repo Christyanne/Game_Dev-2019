@@ -20,3 +20,12 @@ Text ScoreText;
 		ScoreText.text = " " + Score;	
 	}
 }
+
+    public static void AddPoints (int PointsToAdd) {
+		Score += PointsToAdd
+	}
+
+	//public static void reset () {
+	//Score=0;	
+	//}
+}	
