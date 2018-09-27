@@ -6,6 +6,8 @@ public class CharacterMove : MonoBehaviour {
     // Player Movement Variables
 	public int MoveSpeed;
 	public float JumpHeight;
+	private bool doubleJump;
+	public float moveVelocity;
 
 	// Player grounded variables
 	public Tranform groundcheck;
@@ -14,10 +16,9 @@ public class CharacterMove : MonoBehaviour {
 	private bool grounded;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start (){
+
 	}
-	
 
 	void FixedUpdate () {
 		grounded = Physics2D.OverLapCircle(groundCheck.position, groundCheckRarius, whatIsGround);
@@ -37,7 +38,7 @@ public class CharacterMove : MonoBehaviour {
 	       doubleJummp = false;
 
 	   if(Input.GetKeyDown (KeyCode.Space)&& !grounded){
-                Jump():
+                Jump();
 				doubleJump = true;
 	   }   
        //Non-Slide Player
@@ -54,10 +55,7 @@ public class CharacterMove : MonoBehaviour {
 		}
         if(Input.GetKey (KeyCode.A)){
                 //GetComponent<Rightbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-
-		}
-        GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity,
+                GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y)
 
 		public void Jump(){
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
