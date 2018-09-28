@@ -26,9 +26,9 @@ public class EnemyControl : MonoBehaviour {
 
 	//Update is called once per frame
 	void update () {
-		NotAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, WallCheckRadius, WhatIsWall)
+		NotAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, WallCheckRadius, WhatIsWall);
         
-		HittingWall = Physics2d.OverlapCircle(WallCheck.position, WallCheckRadius, WhatIsWall)
+		HittingWall = Physics2D.OverlapCircle(WallCheck.position, WallCheckRadius, WhatIsWall);
 
         if (HittingWall || !NotAtEdge){
             MoveRight = !MoveRight;
