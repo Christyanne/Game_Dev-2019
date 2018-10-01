@@ -7,21 +7,16 @@ public class EnemyControl : MonoBehaviour {
 	//Movement Variables
 	
 	public float MoveSpeed;
-	
 	public bool MoveRight;
 
 	//Wall Check
-	public Transform Wallcheck;
-
+	public Transform WallCheck;
 	public float WallCheckRadius;
-
 	public LayerMask WhatIsWall;
-
 	private bool HittingWall;
 
 	//Edge Check
 	private bool NotAtEdge;
-	
 	public Transform EdgeCheck;
 
 	//Update is called once per frame
@@ -35,11 +30,11 @@ public class EnemyControl : MonoBehaviour {
 		}
 	    if (MoveRight){
 			transform.localScale = new Vector3(-0.2f,0.2f,1f);
-			GetComponent<RigidBody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 		else {
 			transform.localScale = new Vector3(0.2f, 0.2f,1f);
-			GetComposed<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 	}	
 }
