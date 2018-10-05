@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelMaager : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
 	private Rigidbody2D GoodGuy;
@@ -18,25 +18,25 @@ public class LevelMaager : MonoBehaviour {
 	public int PointPenaltyOnDeath;
 
 	//Store Gravity Value
-	private float GravityValue;
+	private float GravityStore;
 
 	// Use this for initialization
 	void Start () {
 		GoodGuy = FindObjectOfType<Rigidbody2D>();
 	}
-	public void RespawPlayer(){
+	public void RespawnPlayer(){
 		StartCoroutine ("RespawnGoodGuyCo");
 	}
-	public IEnumerator RespawnPlayeryCo(){
+	public IEnumerator RespawnPlayerCo(){
 		//Generate Death Partical
-		Instantiate (DeathParticle, GoodGuy.transform.position, GoodGuy.transform.rotation);
+		Instantiate (DeathPartical, GoodGuy.transform.position, GoodGuy.transform.rotation);
 		//Hide
 		//Pc.enabled = false
 		GoodGuy.GetComponent<Renderer>().enabled = false;
 		//Gravity Reset
 		GravityStore = GoodGuy.GetComponent<Rigidbody2D>().gravityScale;
 		GoodGuy.GetComponent<Rigidbody2D>().gravityScale =0f;
-		GoodGuy.GetComponent<Rigidbody2D>().velocity.Vector2.zero;
+		GoodGuy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		//Point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 		//Debug Mesage

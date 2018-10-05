@@ -4724,7 +4724,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60022162}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.65, y: -0.89, z: -0.64}
+  m_LocalPosition: {x: -1.4, y: 1.78, z: -0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9536,7 +9536,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 184486363}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.45, y: -1.31, z: -0.41}
+  m_LocalPosition: {x: -1.43, y: -0.86, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9551,6 +9551,8 @@ GameObject:
   m_Component:
   - component: {fileID: 225623418}
   - component: {fileID: 225623417}
+  - component: {fileID: 225623420}
+  - component: {fileID: 225623419}
   m_Layer: 0
   m_Name: DeathBox
   m_TagString: Untagged
@@ -9596,6 +9598,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225623419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225623416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71320e0026364ed283e5109b0e3dc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelManager: {fileID: 0}
+--- !u!114 &225623420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225623416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3b1c4411f8245d79255d9f2269553f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &309602629
 GameObject:
   m_ObjectHideFlags: 0
@@ -9770,7 +9795,7 @@ GameObject:
   m_Layer: 0
   m_Name: Respawn_Ps
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9898,7 +9923,7 @@ GameObject:
   m_Layer: 0
   m_Name: ' CheckPoint_01'
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9953,6 +9978,7 @@ GameObject:
   - component: {fileID: 1416271825}
   - component: {fileID: 1416271824}
   - component: {fileID: 1416271823}
+  - component: {fileID: 1416271826}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -10033,6 +10059,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416271826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1416271822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a2a358d520247c0a58d26fc11e7db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointsToAdd: 100
 --- !u!1 &1526561555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10044,6 +10082,9 @@ GameObject:
   - component: {fileID: 1526561558}
   - component: {fileID: 1526561557}
   - component: {fileID: 1526561556}
+  - component: {fileID: 1526561561}
+  - component: {fileID: 1526561562}
+  - component: {fileID: 1526561560}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -10156,6 +10197,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526561560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1526561555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71320e0026364ed283e5109b0e3dc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelManager: {fileID: 2135785849}
+--- !u!114 &1526561561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1526561555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5c20a7444af4e478fc9b28b57bd9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 1
+  MoveRight: 0
+  WallCheck: {fileID: 0}
+  WallCheckRadius: 0.5
+  WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 768
+  EdgeCheck: {fileID: 0}
+--- !u!61 &1526561562
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1526561555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 0.22}
+  m_EdgeRadius: 0
 --- !u!1 &1552782496
 GameObject:
   m_ObjectHideFlags: 0
@@ -10371,6 +10468,7 @@ GameObject:
   - component: {fileID: 2135785845}
   - component: {fileID: 2135785848}
   - component: {fileID: 2135785847}
+  - component: {fileID: 2135785850}
   - component: {fileID: 2135785849}
   m_Layer: 0
   m_Name: GoodGuy
@@ -10431,7 +10529,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2135785844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.387, y: 1.66, z: -0.00032815337}
+  m_LocalPosition: {x: -1.387, y: 1.91, z: -0.00032815337}
   m_LocalScale: {x: 5.574775, y: 5.211302, z: 1}
   m_Children:
   - {fileID: 1559158968}
@@ -10491,11 +10589,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2135785844}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad760c5b0ed84d29b8d25e20a4bf80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCheckPoint: {fileID: 1186245610}
+  DeathPartical: {fileID: 184486363}
+  RespawnParticle: {fileID: 1015414085}
+  RespawnDelay: 2
+  PointPenaltyOnDeath: 7
+--- !u!114 &2135785850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135785844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0ea4272905da4a68b470b3ce594fef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  JumpHeight: 6
+  MoveSpeed: 2
+  JumpHeight: 2
   moveVelocity: 2
   groundCheck: {fileID: 2135785846}
   groundCheckRadius: 0.5
