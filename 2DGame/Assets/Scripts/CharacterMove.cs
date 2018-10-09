@@ -31,10 +31,10 @@ public class CharacterMove : MonoBehaviour {
 		}
     
         //Double jump code
-       if (grounded)
+       if (grounded);
 	        doubleJump = false;
 
-	   if (Input.GetKeyDown (KeyCode.Space)&& !grounded){
+	   if (Input.GetKeyDown (KeyCode.Space)&& !doubleJump && !grounded){
             	Jump();
 				doubleJump = true;
 	   }   

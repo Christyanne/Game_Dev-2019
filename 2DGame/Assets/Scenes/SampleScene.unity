@@ -193,10 +193,10 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60022162}
   serializedVersion: 5
-  lengthInSec: 4
+  lengthInSec: 0.46
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5005,10 +5005,10 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 184486363}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 0.42
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -10081,9 +10081,9 @@ GameObject:
   - component: {fileID: 1526561559}
   - component: {fileID: 1526561558}
   - component: {fileID: 1526561557}
+  - component: {fileID: 1526561562}
   - component: {fileID: 1526561556}
   - component: {fileID: 1526561561}
-  - component: {fileID: 1526561562}
   - component: {fileID: 1526561560}
   m_Layer: 0
   m_Name: Enemy
@@ -10111,7 +10111,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1526561557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10220,14 +10220,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5c20a7444af4e478fc9b28b57bd9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  MoveSpeed: 2
   MoveRight: 0
-  WallCheck: {fileID: 0}
-  WallCheckRadius: 0.5
+  WallCheck: {fileID: 2029614549}
+  WallCheckRadius: 0.1
   WhatIsWall:
     serializedVersion: 2
     m_Bits: 768
-  EdgeCheck: {fileID: 0}
+  EdgeCheck: {fileID: 309602630}
 --- !u!61 &1526561562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10555,7 +10555,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2135785848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10593,6 +10593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentCheckPoint: {fileID: 1186245610}
+  GoodGuy: {fileID: 2135785847}
   DeathPartical: {fileID: 184486363}
   RespawnParticle: {fileID: 1015414085}
   RespawnDelay: 2
@@ -10609,7 +10610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  JumpHeight: 2
+  JumpHeight: 5
   moveVelocity: 2
   groundCheck: {fileID: 2135785846}
   groundCheckRadius: 0.5

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
-	private Rigidbody2D GoodGuy;
+	public Rigidbody2D GoodGuy;
 
 	//Particles
 	public GameObject DeathPartical;
@@ -22,12 +22,12 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GoodGuy = FindObjectOfType<Rigidbody2D>();
+		// GoodGuy = FindObjectOfType<Rigidbody2D>();
 	}
 	public void RespawnPlayer(){
 		StartCoroutine ("RespawnGoodGuyCo");
 	}
-	public IEnumerator RespawnPlayerCo(){
+	public IEnumerator RespawnGoodGuyCo(){
 		//Generate Death Partical
 		Instantiate (DeathPartical, GoodGuy.transform.position, GoodGuy.transform.rotation);
 		//Hide
