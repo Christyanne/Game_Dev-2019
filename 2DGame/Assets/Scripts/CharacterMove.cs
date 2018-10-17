@@ -30,7 +30,7 @@ public class CharacterMove : MonoBehaviour {
 
 		}
     
-        //Double jump code
+        //doubleJump code
        if (grounded);
 	        doubleJump = false;
 
