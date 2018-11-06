@@ -29,7 +29,7 @@ public class EnemyControl : MonoBehaviour {
             MoveRight = !MoveRight;
 		}
 	    if (MoveRight){
-			transform.localScale = new Vector3(-7f,7f,1f);
+			transform.localScale = new Vector3(-7f,-7f,1f);
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 		else {
