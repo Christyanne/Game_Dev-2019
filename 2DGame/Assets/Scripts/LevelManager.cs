@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
 	public Rigidbody2D GoodGuy;
+	public GameObject GoodGuy2;
 
 	//Particles
 	public GameObject DeathPartical;
@@ -22,6 +23,8 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GoodGuy = GameObject.Find("GoodGuy").GetComponent<Rigidbody2D>();
+		GoodGuy2 = GameObject.Find("GoodGuy");
 		// GoodGuy = FindObjectOfType<Rigidbody2D>();
 	}
 	public void RespawnPlayer(){
@@ -32,6 +35,7 @@ public class LevelManager : MonoBehaviour {
 		Instantiate (DeathPartical, GoodGuy.transform.position, GoodGuy.transform.rotation);
 		//Hide
 		//Pc.enabled = false
+		GoodGuy2.SetActive(false);
 		GoodGuy.GetComponent<Renderer>().enabled = false;
 		//Gravity Reset
 		GravityStore = GoodGuy.GetComponent<Rigidbody2D>().gravityScale;
@@ -49,6 +53,7 @@ public class LevelManager : MonoBehaviour {
 		GoodGuy.transform.position = CurrentCheckPoint.transform.position;
 		//Show GoodGuy
 		//GoodGuy.enable = true;
+		GoodGuy2.SetActive(true);
 		GoodGuy.GetComponent<Renderer>().enabled = true;
 		//Spawn GoodGuy
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);

@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class MarshmallowShooter : MonoBehaviour {
 	public float Speed;
-	public Rigidbody2D GoodGuy;
+	public float Timeout;
+	public GameObject GoodGuy;
 	public GameObject EnemyDeath;
 	public int PointsForKill;
 
 	// Use this for initialization
 	void Start () {
+		GoodGuy = GameObject.Find("GoodGuy");
+		EnemyDeath = Resources.Load("Prefabs/DeathParticle");
+		ProjectileParticle = Resources;Load("Prefabs/Respawn_Ps") as GameObject;
 		if(GoodGuy.transform.localScale.x < 0)
 			Speed = -Speed;	
+		
+		//Destroy Projectile after x seconds
+		Destroy(GameObject,TimeOut);	
 	}
 	
 	// Update is called once per frame
@@ -21,10 +28,15 @@ public class MarshmallowShooter : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Enemy"){
 			Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
-			Destroy (other.gameObject);
+			Destroy (other.GameObject);
 			ScoreManager.AddPoints (PointsForKill);
 		}
-		Instantiate(EnemyDeath, transform.position, transform.rotation);
-		Destroy (gameObject);
+		//Instantiate(EnemyDeath, transform.position, transform.rotation);
+		Destroy (GameObject);
+	}	
+		void OnCollisionEnter2D(Collision2D other){
+
+		Instantiate(ProjetileParticle, transform.position, transform.rotation);
+		Destroy(GameObject);
 	}
 }	
