@@ -36,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198540395098810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -75.31, y: 13.41, z: -0.033983063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.81, y: 5.87, z: -0.033983063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,8 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  TimeOut: 0
   GoodGuy: {fileID: 0}
   EnemyDeath: {fileID: 0}
+  ProjectileParticle: {fileID: 0}
   PointsForKill: 13
 --- !u!212 &212873582989145046
 SpriteRenderer:
