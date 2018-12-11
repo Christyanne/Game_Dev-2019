@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject CurrentCheckPoint;
-	public Rigidbody2D GoodGuy;
-	public GameObject GoodGuy2;
+	public Rigidbody2D GoodGuy_2;
+	public GameObject GoodGuy3;
 
 	//Particles
 	public GameObject DeathPartical;
@@ -23,24 +23,24 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GoodGuy = GameObject.Find("GoodGuy").GetComponent<Rigidbody2D>();
-		GoodGuy2 = GameObject.Find("GoodGuy");
+		GoodGuy_2 = GameObject.Find("GoodGuy_2").GetComponent<Rigidbody2D>();
+		GoodGuy3 = GameObject.Find("GoodGuy_2");
 		// GoodGuy = FindObjectOfType<Rigidbody2D>();
 	}
 	public void RespawnPlayer(){
-		StartCoroutine ("RespawnGoodGuyCo");
+		StartCoroutine ("RespawnGoodGuy_2Co");
 	}
-	public IEnumerator RespawnGoodGuyCo(){
+	public IEnumerator RespawnGoodGuy_2Co(){
 		//Generate Death Partical
-		Instantiate (DeathPartical, GoodGuy.transform.position, GoodGuy.transform.rotation);
+		Instantiate (DeathPartical, GoodGuy_2.transform.position, GoodGuy_2.transform.rotation);
 		//Hide
 		//Pc.enabled = false
-		GoodGuy2.SetActive(false);
-		GoodGuy.GetComponent<Renderer>().enabled = false;
+		GoodGuy3.SetActive(false);
+		GoodGuy_2.GetComponent<Renderer>().enabled = false;
 		//Gravity Reset
-		GravityStore = GoodGuy.GetComponent<Rigidbody2D>().gravityScale;
-		GoodGuy.GetComponent<Rigidbody2D>().gravityScale =0f;
-		GoodGuy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		GravityStore = GoodGuy_2.GetComponent<Rigidbody2D>().gravityScale;
+		GoodGuy_2.GetComponent<Rigidbody2D>().gravityScale =0f;
+		GoodGuy_2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		//Point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 		//Debug Mesage
@@ -48,13 +48,13 @@ public class LevelManager : MonoBehaviour {
 		//Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
 		//Gravity Restore
-		GoodGuy.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
+		GoodGuy_2.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
 		//Match GoodGuys transform position
-		GoodGuy.transform.position = CurrentCheckPoint.transform.position;
+		GoodGuy_2.transform.position = CurrentCheckPoint.transform.position;
 		//Show GoodGuy
 		//GoodGuy.enable = true;
-		GoodGuy2.SetActive(true);
-		GoodGuy.GetComponent<Renderer>().enabled = true;
+		GoodGuy3.SetActive(true);
+		GoodGuy_2.GetComponent<Renderer>().enabled = true;
 		//Spawn GoodGuy
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 	}

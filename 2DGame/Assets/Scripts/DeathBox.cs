@@ -6,7 +6,7 @@ public class DeathBox : MonoBehaviour {
 
 void OnztriggerEnter2D (Collider2D other) {
 
-	if(other.name == "GoodGuy")
+	if(other.name == "GoodGuy_2")
 	{
 		Debug.Log("Player Enters Death Zone");
 		Destroy(other);
