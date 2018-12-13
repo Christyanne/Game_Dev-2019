@@ -28,7 +28,7 @@ public class CharacterMove : MonoBehaviour {
 		
 		//This code makes the character jump
 		if (Input.GetKeyDown (KeyCode.Space)&& grounded){
-             Jump();
+            Jump();
 		}
 
         //doubleJump code
@@ -37,11 +37,11 @@ public class CharacterMove : MonoBehaviour {
 			animator.SetBool("isJumping", false);
 	   }
 	   if (Input.GetKeyDown (KeyCode.Space)&& !doubleJump && !grounded){
-            	Jump(){
+            	Jump();
 				doubleJump = true;
 	   }   
-       //Non-Slide Player
-	   moveVelocity = 0f;
+    	//Non-Slide Player
+	    moveVelocity = 0f;
 
 	    //This code makes the character move from side to side using A&D keys
 		if (Input.GetKey (KeyCode.D)){
