@@ -12,7 +12,7 @@ public class MarshmallowShooter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GoodGuy = GameObject.Find("GoodGuy_2");
+		GoodGuy = GameObject.Find("GoodGuy");
 		EnemyDeath = Resources.Load("Prefabs/DeathParticle") as GameObject;
 		ProjectileParticle = Resources.Load("Prefabs/Respawn_Ps") as GameObject;
 		if(GoodGuy.transform.localScale.x < 0)

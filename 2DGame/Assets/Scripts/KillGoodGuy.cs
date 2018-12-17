@@ -11,7 +11,7 @@ public class KillGoodGuy : MonoBehaviour {
 		LevelManager = FindObjectOfType <LevelManager>();
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.name == "GoodGuy_2"){
+		if (other.name == "GoodGuy"){
 			LevelManager.RespawnPlayer();
 		}
 	}
