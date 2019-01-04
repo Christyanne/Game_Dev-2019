@@ -49,7 +49,7 @@ public class CharacterMove : MonoBehaviour {
 			moveVelocity = MoveSpeed;
 			animator.SetBool("isWalking",true);
 		}
-		else if (Input.GetKey (KeyCode.D)){
+		else if (Input.GetKeyUp (KeyCode.D)){
 			animator.SetBool("isWalking",false);
 		}
 
@@ -58,7 +58,7 @@ public class CharacterMove : MonoBehaviour {
             moveVelocity = -MoveSpeed;
 			animator.SetBool("isWalking",true);
 		}	
-		else if (Input.GetKey (KeyCode.A)){
+		else if (Input.GetKeyUp (KeyCode.A)){
 			animator.SetBool("isWalking",false);
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);

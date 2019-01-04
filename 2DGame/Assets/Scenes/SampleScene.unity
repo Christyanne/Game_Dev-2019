@@ -2617,7 +2617,8 @@ MonoBehaviour:
   GoodGuy: {fileID: 0}
   GoodGuy2: {fileID: 0}
   DeathPartical: {fileID: 1106862522}
-  RespawnParticle: {fileID: 1015414085}
+  RespawnParticle: {fileID: 1371681779186750, guid: 646fa1cb4b1cc4ce189fd531165c97ce,
+    type: 2}
   RespawnDelay: 2
   PointPenaltyOnDeath: 7
 --- !u!4 &1840240250
